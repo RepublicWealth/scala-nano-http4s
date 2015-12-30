@@ -1,0 +1,41 @@
+plugins {
+    id 'scala'
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '1.2.1'
+}
+
+group 'au.com.wealthninja'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+tasks.withType(ScalaCompile) {
+    scalaCompileOptions.useAnt = false
+    scalaCompileOptions.useCompileDaemon = true // use fsc
+}
+
+dependencies{
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile "org.scala-lang:scala-library:${scalaVersion}"
+    testCompile "junit:junit:4.11"
+}
+
+task helloJava(type: JavaExec, dependsOn: classes) {
+    main = 'HelloJava'
+    classpath sourceSets.main.runtimeClasspath
+    classpath configurations.runtime
+}
+
+task helloScala(type: JavaExec, dependsOn: classes) {
+    main = 'HelloScala'
+    classpath sourceSets.main.runtimeClasspath
+    classpath configurations.runtime
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
