@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/scala-nano-spike.iml" filepath="$PROJECT_DIR$/scala-nano-spike.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala-nano-http4s.iml" filepath="$PROJECT_DIR$/scala-nano-http4s.iml" />
     </modules>
   </component>
 </project>

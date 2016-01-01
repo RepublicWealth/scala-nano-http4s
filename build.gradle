@@ -4,13 +4,15 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '1.2.1'
 }
 
-group 'au.com.wealthninja'
+group 'au.com.republicwealth'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
 repositories {
     jcenter()
+    maven { url "https://clojars.org/repo" }
+    mavenLocal()
 }
 
 tasks.withType(ScalaCompile) {
@@ -21,6 +23,8 @@ tasks.withType(ScalaCompile) {
 dependencies{
     compile 'org.slf4j:slf4j-api:1.7.5'
     compile "org.scala-lang:scala-library:${scalaVersion}"
+    compile "jnanomsg:jnanomsg:${jnanomsgVersion}"
+
     testCompile "junit:junit:4.11"
 }
 
