@@ -1,4 +1,4 @@
-package au.com.republicwealth;
+package au.com.republicwealth.spike;
 
 public class HelloJava {
     public static void main (String [] args) {

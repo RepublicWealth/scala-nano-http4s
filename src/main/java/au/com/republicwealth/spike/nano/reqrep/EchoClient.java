@@ -1,4 +1,4 @@
-package au.com.republicwealth.nano.reqrep;
+package au.com.republicwealth.spike.nano.reqrep;
 
 import nanomsg.reqrep.ReqSocket;
 

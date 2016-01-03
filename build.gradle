@@ -4,14 +4,13 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '1.2.1'
 }
 
-group 'au.com.republicwealth'
+group 'au.com.republicwealth.spike'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
 repositories {
     jcenter()
-    maven { url "https://clojars.org/repo" }
     mavenLocal()
 }
 
@@ -23,7 +22,13 @@ tasks.withType(ScalaCompile) {
 dependencies{
     compile 'org.slf4j:slf4j-api:1.7.5'
     compile "org.scala-lang:scala-library:${scalaVersion}"
-    compile "jnanomsg:jnanomsg:${jnanomsgVersion}"
+    compile "au.com.republicwealth.nanomsg:jfuture-nanomsg:${jnanomsgVersion}"
+
+    compile "org.http4s:http4s-dsl_2.11:${http4sVersion}"
+    compile "org.http4s:http4s-blaze-server_2.11:${http4sVersion}"
+    compile "org.http4s:http4s-jetty_2.11:${http4sVersion}"
+    compile "org.http4s:http4s-blaze-client_2.11:${http4sVersion}"
+    compile "org.http4s:rho-core_2.11:${http4sVersion}"
 
     testCompile "junit:junit:4.11"
 }
